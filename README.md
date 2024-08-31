@@ -18,7 +18,7 @@ WikiSite is an automated system for aggregating and publishing GitHub wikis acro
 
 - **GitHub App:** Requires a GitHub App with read access to repository contents.
 - **Shared-Wiki Property:** Repositories must have a custom boolean property `shared-wiki` set to `true`.
-- **Image References:** Only image references pointing to repository assets are supported (e.g., `/images/example.png`).
+- **Image References:** Only image references pointing to repository assets are supported (e.g., `https://github.com/owner/repo/blob/branch/images/example.png`).
 
 ## Getting Started
 
