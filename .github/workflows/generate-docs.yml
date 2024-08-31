@@ -16,6 +16,10 @@ jobs:
     concurrency: github-pages
     runs-on: ubuntu-latest
 
+    env:
+      ENV_ORG_NAME: ${{ github.repository_owner }}
+      ENV_MAIN_WIKI: ${{ github.event.repository.name }}
+
     steps:
       - name: Generate GitHub App Token
         uses: actions/create-github-app-token@v1
