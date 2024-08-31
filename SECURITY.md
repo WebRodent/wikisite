@@ -8,7 +8,7 @@ We only support the latest stable version of WikiSite. Please ensure that you ar
 
 If you discover a security vulnerability within this project, please report it as soon as possible. We take all security concerns seriously and will address them promptly.
 
-To report a vulnerability, please email [oyvind@webrodent.com](mailto:oyvind@webrodent.com). 
+To report a vulnerability, please email [github@webrodent.com](mailto:github@webrodent.com). 
 
 Please include as much detail as possible about the vulnerability and any steps needed to reproduce it.
 

@@ -111,4 +111,4 @@ For any issues, please open an issue on this repository.
 
 ## Contact
 
-For more information, you can reach out to the project maintainer at [oyvind@webrodent.com](mailto:oyvind@webrodent.com).
+For more information, you can reach out to the project maintainer at [github@webrodent.com](mailto:github@webrodent.com).

@@ -28,7 +28,7 @@ Project maintainers are responsible for clarifying the standards of acceptable b
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at [oyvind@webrodent.com](mailto:oyvind@webrodent.com). All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at [github@webrodent.com](mailto:github@webrodent.com). All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances.
 
 ## Attribution
 
