@@ -1,5 +1,5 @@
 {
-    "name": "WikiScraper Dev Container",
+    "name": "WikiSite Dev Container",
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
     "features": {
         "ghcr.io/devcontainers/features/github-cli:1": {},
