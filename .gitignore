@@ -1,0 +1,5 @@
+*.env
+data/*
+!data/.gitkeep
+_pages
+_site

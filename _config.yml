@@ -1,0 +1,29 @@
+theme: "just-the-docs"
+baseurl: "/"
+source: _pages
+title: "Wiki Site"
+
+# Enable search functionality
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  rel_url: true
+
+# Enable or disable the side/mobile menu globally
+nav_enabled: true
+nav_fold: true
+
+# Heading anchor links appear on hover over h1-h6 tags in page content
+heading_anchors: true
+
+color_scheme: dark
+
+# Set up the default URL structure and navigation
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

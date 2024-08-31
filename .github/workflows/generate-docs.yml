@@ -1,0 +1,77 @@
+name: Fetch All Wikis, Build, and Deploy Jekyll Site
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write  # Needed for deploying to GitHub Pages
+  id-token: write  # Needed for OIDC authentication
+
+jobs:
+  fetch-build-deploy:
+    environment: github-pages
+    concurrency: github-pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate GitHub App Token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Install Jekyll and dependencies
+        run: bundle install
+
+      - name: Authenticate with GitHub CLI
+        run: echo "${{ steps.app-token.outputs.token }}" | gh auth login --with-token
+
+      - name: Pull all wikis
+        run: ./scripts/pull-all-wikis.sh
+
+      - name: Preprocess wikis
+        run: ./scripts/preprocess-wikis.sh
+
+      - name: Pull all wiki assets
+        run: ./scripts/pull-all-wiki-assets.sh
+
+      - name: Replace asset references
+        run: ./scripts/replace-asset-references.sh
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
+      - name: Upload site to GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: fetch-build-deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
