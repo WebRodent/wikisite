@@ -85,6 +85,14 @@ To test the Jekyll site locally, follow these steps:
 
 Use the provided GitHub Actions workflow to automatically deploy your site to GitHub Pages.
 
+Change the environments in the workflow file to match your org and main wiki repository.
+
+```yaml
+env:
+  ENV_ORG_NAME: yourorg
+  ENV_MAIN_WIKI: main-wiki-repo
+```
+
 ### 6. Customization
 
 You can customize the look and feel of your site by editing the `_config.yml` and other Jekyll-related settings.
