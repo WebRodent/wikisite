@@ -101,7 +101,7 @@ You can customize the look and feel of your site by editing the `_config.yml` an
 
 We welcome contributions! Please check out our [contributing guide](CONTRIBUTING.md) for more details.
 
-## License
+## License 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
